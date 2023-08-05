@@ -50,7 +50,10 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
 </form>
 </div>
 </div>
-
+<form id = "form" className="w-screen h-screen  bg-gradient-to-r 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   flex 
+   justify-center items-center "></form>
     </> 
 
 }

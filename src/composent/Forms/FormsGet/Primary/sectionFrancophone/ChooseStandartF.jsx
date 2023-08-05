@@ -463,7 +463,7 @@ setTimeout(()=>{
 
 let chekbox ="w-6 space-x-5  hover:bg-red-400"
 let Style = "m-0 opacity-50  text-lg h-auto w-auto  hover:bg-blue-200 focus:bg-red-400"
-let Styles = "ml-5   text-lg  "
+let Styles = "ml-5   text-sm  md:text-lg "
 let but = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-20 border-2 border-slate-300 mr-20  "
 let buts = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-10 border-2 border-slate-300 mr-10  "
 let font = "w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"

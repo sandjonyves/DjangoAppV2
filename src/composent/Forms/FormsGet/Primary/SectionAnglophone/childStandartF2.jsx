@@ -10,7 +10,7 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
    from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
    flex 
    justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
+   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10 mt-[800px]">
       <h1 className={tabVars.StyleTitle}> CHOICE OF MATERIALS</h1>
     
    
@@ -47,10 +47,15 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
    </div>
    </div>
 </div>
-</form>
-</div>
-</div>
 
+</form>
+
+</div>
+</div>
+<form id = "form" className="w-screen h-screen  bg-gradient-to-r 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   flex 
+   justify-center items-center "></form>
     </> 
 
 }
