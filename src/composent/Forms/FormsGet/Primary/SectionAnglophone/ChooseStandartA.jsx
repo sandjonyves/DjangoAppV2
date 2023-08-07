@@ -216,7 +216,7 @@ function ChooseStandard(props){
       b.addEventListener('click', (event) => {
           
          
-         b.className="bg-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+         b.className="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"
 
 
         });
@@ -459,12 +459,17 @@ setTimeout(()=>{
 
 }
 
-let chekbox ="w-6 space-x-5  hover:bg-red-400"
+
+let ButValid ="md:space-x-20 space-x-10   mt-10  text-center md:items-center justify-between "
+let precButton = "bg-blue-500 hover:bg-blue-700 text-white font-bold md:ml-0 ml-[-30px] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+
 let Style = "m-0 opacity-50   hover:bg-blue-200 focus:bg-red-400"
 let Styles = "ml-5   text-lg  "
 let but = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-20 border-2 border-slate-300 mr-20  "
 let buts = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-10 border-2 border-slate-300 mr-10  "
 let font = "w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"
+let font2 = "w-auto h-auto  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"
+
 let StylePev = " bg-blue-500 font-bold py-2 h-auto w-40 mb-5  px-4 rounded focus:outline-none text-white focus:shadow-outline hover:bg-blue-700"
 let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
 
@@ -474,11 +479,9 @@ const tabClassSecondaire = ["From1","From2","From3","From4","From5","lawer","upp
 const firstCycle = ["From1","From2"]
 const secondCycle =["From3","From4"]
 const thirdCycle = ["From5","lawer","upper"]
-const tabMatiereSecondaireScintifique = ["Mathematics","Additional math","Further maths","Physics","Chemistry","Biology","human Biology","Computer science"];
 const  tabMatiereSecondaireLiteraire = ["Mathematics","Additional math","Further maths","Physics","Chemistry","Biology","human Biology","Computer science","Philosophy" ,"French","English","LCN(national language and culture)","HistGeo/MEC", " Other Languages(Latin, Chinese, Spanish, German ...)","Cinematographic Arts"]
-const tabNiveau = ["primary","secondary"]
  
-const tabVar= {font,StyleTitle,Styles,buts,StylePev}
+const tabVar= {font,font2,ButValid,precButton,StyleTitle,Styles,buts,StylePev}
 const tabFunction = {radioValue,handleprev,handleNext,all2}
 const tabFunction2 = {radioValue2,handleprev2,handleNext2,all21}
 
@@ -487,9 +490,6 @@ const registers= (data)=>{return {...register(data)}}
 
   return<><div id ="container"  className=" "  onSubmit={handleSubmit(onSubmit)}>
 
-   <div className="text-center text-w-[300px]  ">
-
-SERAD THE SALUTION FOR YOUR CHILDREN</div>
   
 {/* formulaire des eleves de l'ecole primaire  */}
 {
@@ -497,7 +497,7 @@ SERAD THE SALUTION FOR YOUR CHILDREN</div>
 
 formNo2 === 1  && <div id="formctl" className="">
    <div className={font}>
-  <div className="card w-[400px] h-auto md:mx-20 mx-60  rounded-md shadow-md bg-white p0 my-20 ">
+   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white   ">
    <h1 className={StyleTitle}>CHOICE OF LEVEL</h1>
       <div className={but}  >
         
@@ -541,13 +541,13 @@ prev
 
 formNo === 2 && <div>
 <div className={font}>
-<div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white   ">
+<div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white mt-48  ">
      
       <h1 className={StyleTitle}>
          choose of class
       </h1>
    
-      <div className={buts}>
+      <div >
          {tabClass.map((element) =>{
               return <ul><div className={buts}>
               <button 
@@ -573,6 +573,7 @@ formNo === 2 && <div>
    </div> 
  </div>
 </div>
+<div className={font}></div>
 </div>  
 
 }
@@ -719,10 +720,9 @@ formNo === 2 && <div>
    <div>
 
       
-   <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-      <button onClick={handleprev} id = "prc" class=" bg-blue-500 hover:bg-blue-700 text-white
-       font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-       type="button">
+   <div class={ButValid}>
+         <button onClick={handleprev} id = "prc" class={precButton} 
+          type="button">
         prev
       </button>
       <button  class="butNexts" id="butNext"   className=" bg-blue-500 hover:bg-blue-700 
@@ -760,13 +760,13 @@ formNo === 2 && <div>
 {
 formNo2 === 2 && <div>
    <div className={font}>
-   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white  my-20">
+   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white  mt-48">
         
          <h1 className={StyleTitle}>
          Choice of class
          </h1>
          
-         <div className={buts}>
+         <div >
              {tabClassSecondaire.map((element) =>{
 
                return <ul> <div className={buts}>
@@ -794,6 +794,7 @@ formNo2 === 2 && <div>
       </div> 
     </div>
    </div>
+   <div className={font}></div>
 </div>  
 
 
@@ -959,10 +960,9 @@ formNo2 === 2 && <div>
    <div>
 
       
-   <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-      <button onClick={handleprev2} id = "prc" class=" bg-blue-500 hover:bg-blue-700 text-white
-       font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-       type="button">
+   <div class={ButValid}>
+         <button onClick={handleprev} id = "prc" class={precButton} 
+          type="button">
         prev
       </button>
       <button  class="butNexts" id="butNext"   className=" bg-blue-500 hover:bg-blue-700 

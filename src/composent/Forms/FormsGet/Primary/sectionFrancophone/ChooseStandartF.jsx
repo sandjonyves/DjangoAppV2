@@ -21,20 +21,20 @@ function ChooseStandard(props){
 
 
    const history = useNavigate();
-   const faireRedirection = () =>{ 
-     let url = "";
-     history(url);}
-   //  
-   const pattern = /^6[0-9]{8}$/
+   // const faireRedirection = () =>{ 
+   //   let url = "";
+   //   history(url);}
+   // //  
+   // const pattern = /^6[0-9]{8}$/
 
-   const veryf = () => {
-      var a = document.getElementById('butNext');
-      a.addEventListener("click",{handleNext});
-   }
+   // const veryf = () => {
+   //    var a = document.getElementById('butNext');
+   //    a.addEventListener("click",{handleNext});
+   // }
 
    //declaration of constate who will be use to change form
 
-   const [datas,setData] = useState([]) 
+
    const [allData,setAllData] = useState([])
    
 
@@ -59,14 +59,7 @@ function ChooseStandard(props){
        setFormNo(formNo -1 )
    }
 
-   const handleNext3 = () =>{
-       
-      setFormNo(formNo3 + 1)
-  }
-  const handleprev3 = () =>{
-      
-      setFormNo(formNo3 -1 )
-  }
+  
    const handleNext2 = () =>{
        setFormNo2(formNo2 + 1)
    }
@@ -106,8 +99,7 @@ function ChooseStandard(props){
    }
       
   
-  const [allCount,setAllCount]=useState(0)
-  
+ 
   
   const radioValue = () => {
    
@@ -118,7 +110,7 @@ function ChooseStandard(props){
    let verif=false;
    let index = 0
    const tab =[...allData]
-   const tabs =[...allData]
+
 
    while( index < checkboxes2.length) {
     
@@ -147,7 +139,7 @@ function ChooseStandard(props){
      
      b.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
       b.addEventListener('click', (event) => {
-         let i = 0;
+         
         
       handleNext();
       
@@ -182,7 +174,7 @@ function ChooseStandard(props){
    var b =document.querySelector("#butNext2");
    let verif=false;
    let index = 0
-    let tab =[];
+
    while( index < checkboxes2.length) {
     
       
@@ -351,7 +343,7 @@ return tab
 const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
 const onSubmit = (data) => {
-  let vl = data
+  
  const tab =  priceAll(data)
 
 //   let but = document.querySelector("#butMail")
@@ -368,8 +360,6 @@ const onSubmit = (data) => {
    setIsLoading2(true)
 
 
-
-setTimeout(()=>{
 
    axios ({
       method:'post',
@@ -401,7 +391,7 @@ setTimeout(()=>{
       setIsLoading2(false)
    })
 
-},5000)
+
   
 
    
@@ -461,12 +451,14 @@ setTimeout(()=>{
 
 }
 
-let chekbox ="w-6 space-x-5  hover:bg-red-400"
-let Style = "m-0 opacity-50  text-lg h-auto w-auto  hover:bg-blue-200 focus:bg-red-400"
+let ButValid ="md:space-x-20 space-x-10   mt-10  text-center md:items-center justify-between "
+let precButton = "bg-blue-500 hover:bg-blue-700 text-white font-bold md:ml-0 ml-[-30px] py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+let Style = "m-0 opacity-50 sm:text-xl text-lg h-auto w-auto  hover:bg-blue-200 focus:bg-red-400"
 let Styles = "ml-5   text-sm  md:text-lg "
-let but = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-20 border-2 border-slate-300 mr-20  "
-let buts = "flex flex-col mt-5 space-y-5  h-auto  w-auto   ml-10 border-2 border-slate-300 mr-10  "
+let but = "flex flex-col mt-5 ml-5 space-y-4  h-auto  w-auto   md:ml-10 md:mr-10 border-2 border-slate-300 mr-10  "
+let buts = "flex flex-col mt-5 ml-5 space-y-4  h-auto  w-auto   md:ml-10 md:mr-10 border-2 border-slate-300 mr-10 "
 let font = "w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"
+let font2 = "w-auto h-auto  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"
 let StylePev = " bg-blue-500 font-bold py-2 h-auto w-40 mb-5  px-4 rounded focus:outline-none text-white focus:shadow-outline hover:bg-blue-700"
 let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
 
@@ -476,21 +468,19 @@ const tabClassSecondaire = ["6eme","5eme","4eme","3eme","2nd","1ere","Tel"];
 const firstCycle = ["6eme","5eme"]
 const secondCycle =["4eme","3eme"]
 const thirdCycle = ["2nd","1ere","Tel"]
-const tabMatiereSecondaireScintifique = ["Mathematique","Physique","Chimie","Svt","Informatique"];
-const  tabMatiereSecondaireLiteraire = ["Mathematique","Physique","Chimie","Svt","Informatique","Philosophie" ,"Français","Aglais","LCN(langue et culture nationnal)","HistGeo/Ecm", "Autres Langues(Latin,Chinoir,Espagniol,Allemang ...)","Arts Cinematographiques"]
-const tabNiveau = ["primaire","secondaire"]
+const  tabMatiereSecondaireLiteraire = ["Mathematique","Physique","Chimie","Svt","Informatique","Philosophie" ,"Français","Aglais","LCN(langue et culture nationnal)","HistGeo/Ecm", "Autres Langues(Latin,Chinoir,Espagniol,Allemang ...)"]
 //empoyement the child components
  
-const tabVar= {font,StyleTitle,Styles,buts,StylePev}
+const tabVar= {font2,font,ButValid,precButton,font,StyleTitle,Styles,buts,StylePev}
 const tabFunction = {radioValue,handleprev,handleNext,all2}
 const tabFunction2 = {radioValue2,handleprev2,handleNext2,all21}
 
 const registers= (data)=>{return {...register(data)}}
 
 
-  return<><div id ="container"  className=" "  onSubmit={handleSubmit(onSubmit)}>
+  return<><div id ="container"  className="pt-15 "  onSubmit={handleSubmit(onSubmit)}>
 
-   <div className="text-center text-w-[300px]  ">SERAD LA SAOLUTION POUR VOS ENFANTS </div>
+  
   
 {/* formulaire des eleves de l'ecole primaire  */}
 {
@@ -498,7 +488,7 @@ const registers= (data)=>{return {...register(data)}}
 
 formNo2 === 1  && <div id="formctl" className="">
    <div className={font}>
-  <div className="card w-[400px] h-auto md:mx-20 mx-60  rounded-md shadow-md bg-white p0 my-20 ">
+   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white   ">
    <h1 className={StyleTitle}>CHOIX DU NIVEAU </h1>
       <div className={but}  >
         
@@ -548,19 +538,19 @@ formNo === 2 && <div>
          Choix de la classe 
       </h1>
    
-      <div className={buts}>
+      <div >
          {tabClass.map((element) =>{
-              return <ul><div className={buts}>
+              return <ul className={but}  onClick={handleNext} >
               <button 
              
                  value={element}
                 
-                 onClick={handleNext} 
+                
                  className={Style}
                  {...register("class")}>
                   {element}
               </button>
-           </div></ul>
+           </ul>
          })}
      </div>
       <div class=" space-x-20 mt-10  text-center  
@@ -569,7 +559,7 @@ formNo === 2 && <div>
                class="butNexts" 
                id="butNext" 
                className={StylePev} >
-               prev
+                prec
          </button>
    </div> 
  </div>
@@ -584,48 +574,9 @@ formNo === 2 && <div>
 
 khjhjhjhjh</div> */}
 
+<Matter tabVars={tabVar} tabMatirePrimaire={tabMatirePrimaire} tabFunction = {tabFunction} registers={registers}/>
 
 
-
-  <div className={font}>
-   <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
-   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
-   flex 
-   justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
-      <h1 className={StyleTitle}> CHOIX DES MATIERES</h1>
-    
-   
-   <div>
-        {tabMatirePrimaire.map((element) => {
-             return  <div className={buts}>
-             <label htmlFor={element} className={Style}>
-                {element}
-                <input  type="checkbox"  id="checksM" class="checksMs" onClick={radioValue} {...register("matiere")} value={element} className={Styles}   /> 
-             </label>
-       
-          </div>
-        })}
-   </div>
-
-   <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={handleprev}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-          type="button">
-           prec
-         </button>
-         <button disable id="butNext"   className=" bg-blue-500 hover:bg-blue-700 
-         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
-          " >
-           suivant
-         </button>
-         
-   </div>
-   </div>
-</div>
-</form>
-</div>
 </div>
 // </div>
 
@@ -719,9 +670,8 @@ khjhjhjhjh</div> */}
       </div>
       <div>
          
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button onClick={handleprev2} id = "prc" class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+      <div class={ButValid}>
+         <button onClick={handleprev} id = "prc" class={precButton} 
           type="button">
            prec
          </button>
@@ -752,13 +702,13 @@ khjhjhjhjh</div> */}
 {
 formNo2 === 2 && <div>
    <div className={font}>
-   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white  my-20">
+   <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  rounded-md shadow-md bg-white mt-48  ">
         
          <h1 className={StyleTitle}>
             Choix de la classe
          </h1>
          
-         <div className={buts}>
+         <div >
              {tabClassSecondaire.map((element) =>{
 
                return <ul> <div className={buts}>
@@ -786,6 +736,7 @@ formNo2 === 2 && <div>
       </div> 
     </div>
    </div>
+   <div className={font}></div>
 </div>  
 
 
@@ -947,9 +898,8 @@ formNo2 === 2 && <div>
    <div>
 
       
-   <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-      <button onClick={handleprev2} id = "prc" class=" bg-blue-500 hover:bg-blue-700 text-white
-       font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+   <div class={ButValid}>
+      <button onClick={handleprev2} id = "prc" class={precButton} 
        type="button">
         prec
       </button>

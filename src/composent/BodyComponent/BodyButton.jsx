@@ -3,7 +3,7 @@ import React from "react"
 import { Button } from "flowbite-react"
 function Bodybutton(params) {
 
-      let but="bg-green-800 text-white hover:bg-green-500 focus: font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+      let but="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"
        let StyleTd="space-x-10 space-y-20 max-[440px]:space-x-10 max-[440px]:space-y-1     w-[150px] h-[80px] text-center "
     
        const [showModal, setShowModal] = React.useState(false);

@@ -50,7 +50,7 @@ let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
          <div className="flex flex-col my-5 mb-2 ">
          <label htmlFor="name " className="">Nom</label>
          <input type="text" className="p-2 border boder-blue-400 mt-1 outline-0
-         rounded-md" placeholder="enter your name"  {...register("name",{required:true,
+         rounded-md" placeholder="entrer votre nom"  {...register("name",{required:true,
          minLength:2}
          )} />
         {errors.name && <p className="text-red-300">Champ vide </p>}
@@ -58,7 +58,7 @@ let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
       <div className="flex flex-col mb-2 ">
          <label htmlFor="name " className="">Prenom</label>
          <input type="text" className="p-2 border boder-blue-400 mt-1 outline-0
-         rounded-md" placeholder="enter your name"  {...register("Prenom",{required:true,
+         rounded-md" placeholder="entrer votre prenom"  {...register("Prenom",{required:true,
          minLength:2}
          )} />
         {errors.name && <p className="text-red-300">Champ vide </p>}
@@ -68,7 +68,7 @@ let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
          <label htmlFor="what is your number phone" className=""> Numero de telephone</label>
          
         {/* prefice un champ */}
-         <input type="text" placeholder="654340911"  className="p-2 border boder-slate-400 mt-1 outline-0
+         <input type="text" placeholder="693639864"  className="p-2 border boder-slate-400 mt-1 outline-0
          rounded-md"  
            {...register("number", {
             required: true,
@@ -117,7 +117,7 @@ let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
          {...register("matiere",{
             required:true})}
          />
-         {errors.street && <p className="text-red-300">empty field </p> }
+         {errors.street && <p className="text-red-300">champ vide </p> }
       </div>
       <div>
          

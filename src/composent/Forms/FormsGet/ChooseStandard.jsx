@@ -271,7 +271,7 @@ function ChooseStandard(){
             const a =element.localeCompare(data.class)
            
            if(a ==0){
-            priceMatter = 5000  
+            priceMatter = 1000  
             verif = true 
             alert("bonjour")
          }
@@ -289,20 +289,20 @@ function ChooseStandard(){
              for (const iterator of firstCycle) {
                     
                if(iterator==data.class){
-                  priceMatter=1000
+                  priceMatter=1450
                }
                
              }
              for (const iterator of secondCycle) {
       
                if(iterator==data.class){
-                  priceMatter=1200
+                  priceMatter=1450
                }
                
              } for (const iterator of thirdCycle) {
       
                if(iterator==data.class){
-                  priceMatter=1500
+                  priceMatter=1650
                }
                
              }

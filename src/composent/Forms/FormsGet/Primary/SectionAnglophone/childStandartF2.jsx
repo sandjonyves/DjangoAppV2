@@ -10,8 +10,12 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
    from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
    flex 
    justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10 mt-[800px]">
-      <h1 className={tabVars.StyleTitle}> CHOICE OF MATERIALS</h1>
+<div className="card  md:w-[500px]
+       w-[400px] max-[332px]:w-[300px]
+         rounded-md shadow-md bg-white 
+         h-auto rounded-md shadow-md
+       bg-white p-2 md:my-5 md:mt-20 
+       mt-[700px]">      <h1 className={tabVars.StyleTitle}> CHOICE OF MATERIALS</h1>
     
    
    <div>
@@ -32,9 +36,8 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
    </div>
 
    <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={tabFunction.handleprev2}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+   <div class={tabVars.ButValid}>
+         <button  onClick={tabFunction.handleprev2}  class={tabVars.precButton} 
           type="button">
            prev
          </button>

@@ -46,7 +46,9 @@ const [link , setlink]  = useState("")
 
       
       
-        {count == 1 ? (a.className="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"(setstate(checkOne.htmlFor)) (console.log(state))): 
+       if(count == 1) { 
+        a.className="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline";
+        (setstate(checkOne.htmlFor)) }else{
       (
       a.className="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"
      
@@ -57,17 +59,15 @@ const [link , setlink]  = useState("")
         setstate(checkOne.htmlFor);
         setlink("/chooses")
       
-       a.className=
-     " hover:bg-blue-700 text-white bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline "
+       a.className=" hover:bg-blue-700 text-white bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline "
       
-    console.log(state);
-  
+      
       }else if( inputTwo.checked=true){
         setstate(checkTwo.htmlFor);
-         a.className="hover:bg-blue-700 text-white bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline "
+         a.className="hover:bg-blue-700 text-white bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline ";
          // a.setAttribute("class", "click-btn")
          setlink("/chooseF")
-       console.log(state);
+       
     }else{
     a.getAttribute("disabled");
     }
@@ -76,8 +76,8 @@ const [link , setlink]  = useState("")
 }
 
 
-let Style = " opacity-50  "
 let but = "mt-5 space-y-5 h-auto md:h-10  text-left border-2 border-slate-300   "
+let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
 
 
 return <div className={font}> 
@@ -85,7 +85,7 @@ return <div className={font}>
 <form action="" onSubmit={handleSubmit(onSubmit)}>
     
 <div className="card w-[375px] rounded-md shadow-md bg-white p-5 ">
-        <h1 className="text-center text-lg ">
+        <h1 className={StyleTitle}>
           Quel sous-système d'éducation votre  enfant fait t'il ?</h1>
 
 
@@ -133,7 +133,7 @@ set(e)}}
 prev
 </button> */}
      <Link class="link" to={link}  >   
-     <button type="submit"   id="butNext" 
+     <button  id="butNext" 
     className="hover:bg-blue-700 bg-blue-500 text-white w-48 h-16 rounded-lg text-lg focus:shadow-outline opacity-50"
     >
               

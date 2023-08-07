@@ -3,57 +3,7 @@ function Price({data,tabVars,tabFunction,registers,formNo }) {
 let day = ["Lundi","Mardi","mecredi","Jeudi","vendredi","samedi","dimanche"]
 let hour = [1,1.5,2,2.5,3]
 
-const onValue = () =>{
 
-  let valCheck=  document.querySelectorAll('input[type="checkbox"]')
-  let valHour = document.querySelector('butHour')  
-  let count=0
-
-  alert(valHour.inn)
-  alert('dsdsdsds')
-  valCheck.forEach(element => {
-    
-     if (element.checked) {
-        count++
-       alert(element.value)
-     }    
-  });
-
-  
-}
-
-const priceAll = (tab,value) => {
-   let i = 0;
-   let count =0
-      let price = 0;
-      alert(price);
-   const tabMatirePrimaire = ["matematique","science" , "hist/geo/Ecm","Français","anglais","LCN(langue et culture nationnal)"];
-  for (let index = 0; index < tab.length; index++) {
- 
-   for(let j =0;j<day.length;j++){
-      
-      if(tab[index]==day[j]){
-         count++
-         
-      }
-   }
-   
-  }
-   tab.forEach((element)=>{
-      
-      if (element==data[i]) {
-         price+=value*1050; 
-       
-
-         
-      }
-      i++;
-     
-    })     
-
-   price = count*price
-   alert(price)
- }
 
 const change = () => {
    var checkboxes2 = document.querySelectorAll('input[type="radio"]');
@@ -70,7 +20,7 @@ const change = () => {
       
       if (element) {
          verif=true;
-         var value=checkboxes2[index].value
+         
          
           
       }
@@ -85,7 +35,7 @@ const change = () => {
      
      b.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
       b.addEventListener('click', (event) => {
-         let i = 0;
+         
         
          
      tabFunction.handleNext();
@@ -118,10 +68,15 @@ return <div>
     <div> 
     <div className={tabVars.font}>
    <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
-   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-2 max-[500px]:h-[1000px] 
    flex 
    justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
+   <div className="card  md:w-[500px] 
+   w-[400px] max-[332px]:w-[300px] 
+    rounded-md shadow-md bg-white 
+       h-auto rounded-md shadow-md 
+       bg-white p-2 md:my-5 
+       mt-20">
       <h1 className={tabVars.StyleTitle}>choix du nombre de jour</h1>
     
    
@@ -139,9 +94,8 @@ return <div>
    </div>
 
    <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={tabFunction.handleprev}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+      <div class={tabVars.ButValid}>
+         <button  onClick={tabFunction.handleprev}  class={tabVars.precButton} 
           type="button">
            prec
          </button>
@@ -161,6 +115,12 @@ return <div>
 </form>
 </div>
 </div>
+<form id = "form" className="w-screen h-screen  bg-gradient-to-r 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   flex 
+   justify-center items-center "></form>
+ 
+
     </div>  
     
     }
@@ -169,7 +129,8 @@ return <div>
         formNo === 5 && <div>
         <div className={tabVars.font}>
         <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  
-        rounded-md shadow-md bg-white  my-20">
+        rounded-md shadow-md bg-white  p-2 md:my-5 
+        mt-20">
              
               <h1 className={tabVars.StyleTitle}>
                 choix du nombre d'heure
@@ -192,9 +153,8 @@ return <div>
                  })}
              </div>
              <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={tabFunction.handleprev}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+      <div class={tabVars.ButValid}>
+         <button  onClick={tabFunction.handleprev}  class={tabVars.precButton}
           type="button">
            prec
          </button>

@@ -7,25 +7,29 @@ function Matter({tabVars,tabMatirePrimaire,tabFunction,registers }) {
  <div> 
     <div className={tabVars.font}>
    <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
-   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-2 max-[500px]:h-[1000px] 
    flex 
    justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
+   <div className="card  md:w-[500px] w-[400px]
+    max-[332px]:w-[300px]  
+    rounded-md shadow-md bg-white  
+      h-auto rounded-md shadow-md 
+      bg-white p-2 md:my-5 
+       mt-20">
       <h1 className={tabVars.StyleTitle}> CHOIX DES MATIERES</h1>
     
    
-   <div>
+      <div >
         {tabMatirePrimaire.map((element) => {
              return  <div className={tabVars.buts}>
-             <label htmlFor={element} className={tabVars.Style}>
+             <label htmlFor={element} className={tabVars.Style} >
                 {element}
-                <input  type="radio"
-                  id="checksM"
-                   class="checksMs"
-                    onClick={tabFunction.radioValue}
-                     {...registers("matiere")} 
-                      value={element} 
-                      className={tabVars.Styles}   /> 
+                <input  type="checkbox"
+                  id="checksM" class="checksMs"
+                   onClick={tabFunction.radioValue} 
+                   {...registers("matiere")}  
+                   value={element} 
+                   className={tabVars.Styles}   /> 
              </label>
        
           </div>
@@ -33,14 +37,13 @@ function Matter({tabVars,tabMatirePrimaire,tabFunction,registers }) {
    </div>
 
    <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={tabFunction.handleprev}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+      <div class={tabVars.ButValid}>
+         <button  onClick={tabFunction.handleprev}  class={tabVars.precButton} 
           type="button">
            prec
          </button>
          <button disable id="butNext"   className=" bg-blue-500 hover:bg-blue-700 
-         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
+         text-white mr-[10px] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
           " >
            suivant
          </button>
