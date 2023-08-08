@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import React, { useState } from "react"
-import { Button, Modal } from "flowbite-react"
+import { Button,Modal } from "flowbite-react"
 function Bodybutton(params) {
 
       let but="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"
@@ -9,9 +9,10 @@ function Bodybutton(params) {
        const [showModal, setShowModal] = React.useState(false);
        const [showModals, setShowModals] = React.useState(false);
        const [showModalss, setShowModalss] = React.useState(false);
-    
        const [openModal, setOpenModal] = useState('dismissible')
        const props = { openModal, setOpenModal };
+    
+     
        return(
     <div>
 
@@ -45,7 +46,9 @@ function Bodybutton(params) {
                     
                     <td >
                        <div class="but" className={StyleTd} > 
-                       <Button className="w-full h-20" onClick={() => setShowModal(true)}>
+                       <Button className="w-full h-20" onClick={() => {
+                        setOpenModal('dismissible')
+                        setShowModal(true)}}>
                         obtenir de l'aide Gratuit
                         </Button> </div>
                     </td>
@@ -83,13 +86,20 @@ function Bodybutton(params) {
       </button> */}
       {showModal  ?  (
         <>
-         <Modal dismissible show={props.openModal === 'dismissible'} onClose={() => props.setOpenModal(undefined)}>
+        <Modal dismissible show={props.openModal === 'dismissible'} onClose={() => props.setOpenModal(undefined)}>
         <Modal.Header>Terms of Service</Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
               With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
               companies around the world are updating their terms of service agreements to comply.
+              <Modal.Header>  obtenir de l'aide gratuitement avec serad eduction </Modal.Header>
+        
+         
+            nous vous aidons à voirs  tout les difficuletées dont rencontre votre enfant 
+                    au niveau scolaire et en fonction des problemes  nous vous procurons des resolutions
+                    strategiques et performentents 
+            
             </p>
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
               The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to
@@ -105,6 +115,7 @@ function Bodybutton(params) {
           </Button>
         </Modal.Footer>
       </Modal>
+          
         </>
       ) : null}
     </>
@@ -117,7 +128,7 @@ function Bodybutton(params) {
           <div
             className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
           >
-            <div className="absolute h-20 w-auto my-6 mx-auto max-w-3xl ">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl ">
               {/*content*/}
               <div className="bg-gray-300 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}

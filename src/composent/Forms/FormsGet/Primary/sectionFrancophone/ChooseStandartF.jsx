@@ -11,6 +11,7 @@ import Matter2 from "./childStandartF2";
 import Modal from "../../../../OtherCoponent/Modal";
 import React from 'react'
 import Matters from "./Test";
+import Modal2 from "../../../../OtherCoponent/Modal2";
 
 
 
@@ -157,7 +158,7 @@ function ChooseStandard(props){
       let verif=false;
       let index = 0
       
-     
+    
       while( index < checkboxes2.length) {
        
          
@@ -425,30 +426,33 @@ alert(price)
 return tab
  } 
 
-  const Mail = () => {
+//   const Mail = () => {
 
-   let but = document.querySelector("#butRequest")
-   let newBut = document.querySelector("#cont")
-   let newMsg = document.createElement("p")
-   newMsg.textContent="cliquer sur le bouton pour finir votre demande "
-   newBut.append(newMsg)
-   but.removeAttribute("disable")
-   newBut.className="text-green-600  capitalyse"
+//    let but = document.querySelector("#butRequest")
+//    let newBut = document.querySelector("#cont")
+//    let newMsg = document.createElement("p")
+//    newMsg.textContent="cliquer sur le bouton pour finir votre demande "
+//    newBut.append(newMsg)
+//    but.removeAttribute("disable")
+//    newBut.className="text-green-600  capitalyse"
    
-   but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+//    but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
 
-   // b.disabled=false;
+//    // b.disabled=false;
    
    
-   but.addEventListener("click",()=>{
+//    but.addEventListener("click",()=>{
      
-       but.setAttribute("href"," http://127.0.0.1:8000/")
-       console.log(but)
-   })
-  }
+//        but.setAttribute("href"," http://127.0.0.1:8000/")
+//        console.log(but)
+//    })
+//   }
 
 const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
+
+
+const verify = false
 const onSubmit = (data) => {
   
  const tab =  priceAll(data)
@@ -490,14 +494,14 @@ const onSubmit = (data) => {
       //setIsLoading(false)
       const msg = "une erreur c'est produise "
       alert(data.name)
-
+       verify=true
    let but = document.querySelector("#butRequest")
-   let newBut = document.querySelector("#cont")
-   let newMsg = document.createElement("p")
-   newMsg.textContent="cliquer sur le bouton pour finir votre demande "
-   newBut.append(newMsg)
-   but.removeAttribute("disable")
-   newBut.className="text-green-600  capitalyse"
+   // let newBut = document.querySelector("#cont")
+   // let newMsg = document.createElement("p")
+   // newMsg.textContent="cliquer sur le bouton pour finir votre demande "
+   // newBut.append(newMsg)
+   // but.removeAttribute("disable")
+   // newBut.className="text-green-600  capitalyse"
    
    but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
 
@@ -518,12 +522,12 @@ const onSubmit = (data) => {
      
 
    let but = document.querySelector("#butRequest")
-   let newBut = document.querySelector("#cont")
-   let newMsg = document.createElement("p") 
-   newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
-   newBut.append(newMsg)
+   // let newBut = document.querySelector("#cont")
+   // let newMsg = document.createElement("p") 
+   // newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
+   // newBut.append(newMsg)
  
-   newBut.className="text-red-600  capitalyse"
+   // newBut.className="text-red-600  capitalyse"
    
    but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
 
@@ -559,7 +563,7 @@ const thirdCycle = ["2nd","1ere","Tel"]
 const  tabMatiereSecondaireLiteraire = ["Mathematique","Physique","Chimie","Svt","Informatique","Philosophie" ,"Français","Aglais","LCN(langue et culture nationnal)","HistGeo/Ecm", "Autres Langues(Latin,Chinoir,Espagniol,Allemang ...)"]
 //empoyement the child components
  
-const tabVar= {font2,font,ButValid,precButton,font,StyleTitle,Styles,buts,StylePev}
+const tabVar= {verify,font2,font,ButValid,precButton,font,StyleTitle,Styles,buts,StylePev}
 const tabFunction = {radioValue,handleprev,handleNext,all2}
 const tabFunction2 = {radioValue2,handleprev2,handleNext2,all21}
 
@@ -778,7 +782,7 @@ khjhjhjhjh</div> */}
            suivant
          </button>
          {isLoading && 
-   <Modal showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
+   <Modal tabVars={tabVar} showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
 
  }
    </div>
@@ -957,7 +961,7 @@ formNo2 === 2 && <div>
         suivant
       </button>
 </div>
-<a disable id="butMail" onClick={Mail}  
+<a disable id="butMail" 
        className=" bg-blue-500 hover:bg-blue-700 
          w-full text-white opacity-0 
           font-bold py-2 my-2 px-4
@@ -969,7 +973,7 @@ formNo2 === 2 && <div>
          
 </div>
 {isLoading && 
-   <Modal showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
+   <Modal2 showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal2>
 
  }
 
