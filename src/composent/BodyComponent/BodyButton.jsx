@@ -43,7 +43,7 @@ function Bodybutton(params) {
                     </td>
                     
                     <td >
-                       <div class="but" className={StyleTd} onClick={() => setShowModals(true) }> 
+                       <div class="but" className={StyleTd} > 
                        <Button className="w-full h-20" onClick={() => setShowModal(true)}>
                         obtenir de l'aide Gratuit
                         </Button> </div>
@@ -61,7 +61,7 @@ function Bodybutton(params) {
                     <td >
                     <div className={StyleTd}>
                        
-                        <Button className="h-20" > 
+                        <Button className="h-20" onClick={() => setShowModals(true) } > 
                              devinir un encadreur
                         </Button>
                         </div>

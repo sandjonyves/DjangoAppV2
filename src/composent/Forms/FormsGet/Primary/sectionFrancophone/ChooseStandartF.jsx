@@ -90,16 +90,120 @@ function ChooseStandard(props){
    }
      function all21() {
         handleprev2()
-        ctl2()
+        
      } 
      function all2() {
       handleprev()
       ctl2()
-      radioValue()
+      
    }
       
-  
- 
+   const change = () => {
+      var checkboxes2 = document.querySelectorAll('input[type="radio"]');
+      var b =document.querySelector("#butNext2");
+      let verif=false;
+      let index = 0
+      
+     
+      while( index < checkboxes2.length) {
+       
+         
+         const element = checkboxes2[index].checked;
+         
+         
+         if (element) {
+            verif=true;
+            
+            
+             
+         }
+         index++;
+      }
+    
+    
+      if (verif) {
+        
+        b.removeAttribute("disable");
+        // b.disabled=false;
+        
+        b.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+         b.addEventListener('click', (event) => {
+            
+           
+            
+        handleNext();
+      
+        
+        });
+         
+      }else{
+         
+         //b.disable=true;
+         b.className="bg-white text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+         b.addEventListener('click', (event) => {
+             
+            
+            b.className="bg-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+   
+   
+           });
+      }
+     
+    }
+   
+    const change2 = () => {
+      var checkboxes2 = document.querySelectorAll('input[type="radio"]');
+      var b =document.querySelector("#butNext2");
+      let verif=false;
+      let index = 0
+      
+     
+      while( index < checkboxes2.length) {
+       
+         
+         const element = checkboxes2[index].checked;
+         
+         
+         if (element) {
+            verif=true;
+            
+            
+             
+         }
+         index++;
+      }
+    
+    
+      if (verif) {
+        
+        b.removeAttribute("disable");
+        // b.disabled=false;
+        
+        b.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+         b.addEventListener('click', (event) => {
+            
+           
+            
+        handleNext2();
+      
+        
+        });
+         
+      }else{
+         
+         //b.disable=true;
+         b.className="bg-white text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+         b.addEventListener('click', (event) => {
+             
+            
+            b.className="bg-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
+   
+   
+           });
+      }
+     
+    }
+   
   
   const radioValue = () => {
    
@@ -271,17 +375,18 @@ let count =0
       const a =element.localeCompare(data.class)
      
      if(a ==0){
-      priceMatter = 5000  
+      priceMatter = 1000  
       verif = true 
      
    }
 }
 
 if (verif==true) {
-   data.matiere.forEach(element => {
+   const matiere = data.matiere
+   for (let index = 0; index < matiere.length; index++) {
+         
       price+=data.hour*priceMatter;
-      
-   });
+    }
    price = count*price
    
 } else{
@@ -289,27 +394,29 @@ if (verif==true) {
        for (const iterator of firstCycle) {
               
          if(iterator==data.class){
-            priceMatter=1000
+            priceMatter=1450
          }
          
        }
        for (const iterator of secondCycle) {
 
          if(iterator==data.class){
-            priceMatter=1200
+            priceMatter=1450
          }
          
        } for (const iterator of thirdCycle) {
 
          if(iterator==data.class){
-            priceMatter=1500
+            priceMatter=1650
          }
-         
+        
        }
-       data.matiere.forEach(element => {
-         price+=data.hour*priceMatter;
+       const matiere = data.matiere
+       for (let index = 0; index < matiere.length; index++) {
          
-      });
+         price+=data.hour*priceMatter;
+       }
+       
       price = count*price
    
 }
@@ -381,71 +488,52 @@ const onSubmit = (data) => {
       }
    }).then((res) =>{
       //setIsLoading(false)
+      const msg = "une erreur c'est produise "
       alert(data.name)
-      Mail()
+
+   let but = document.querySelector("#butRequest")
+   let newBut = document.querySelector("#cont")
+   let newMsg = document.createElement("p")
+   newMsg.textContent="cliquer sur le bouton pour finir votre demande "
+   newBut.append(newMsg)
+   but.removeAttribute("disable")
+   newBut.className="text-green-600  capitalyse"
+   
+   but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+
+   // b.disabled=false;
+   
+   
+   but.addEventListener("click",()=>{
+     
+       but.setAttribute("href"," http://127.0.0.1:8000/")
+       console.log(but)
       
+   })
+      
+   setIsLoading2(false)    
    }).catch((res) =>{
-      Mail()
+      const msg = "une erreur c'est produise "
       alert(res);
      
+
+   let but = document.querySelector("#butRequest")
+   let newBut = document.querySelector("#cont")
+   let newMsg = document.createElement("p") 
+   newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
+   newBut.append(newMsg)
+ 
+   newBut.className="text-red-600  capitalyse"
+   
+   but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+
+   // b.disabled=false;
+   
+   
+  
       setIsLoading2(false)
    })
 
-
-  
-
-   
-//data.email ="sandjonyves@gmail.com"
-// console.log(data);
-//    const template ="template_flpq63a"
-//    const service = "service_9dc6y2a"
-//    sendfeeback(service,template,{
-//       name:data.name,
-//          niveau:"sil",
-//          classe:data.class,
-//          matiere:data.matiere.join(";"),
-//          numTel:data.number,
-//           addEmail:data.email,
-//           addresse:data.street
-//       //reply_to : r.target.reset()
-//    })
- 
-//  }
-// const sendfeeback = (service,template,variable) => {
-//    //alert("sucess");
-//    var start = window.performance.now();
-// emailjs
-
-// .send((r) =>{
-//    alert("sucess------------------------------");  
-// },service,template,variable,"bCNRw6N4el2XeXAxp")
-
-// .then((res) => {
-//    //alert("sucess");
-//    var end = window.performance.now();
-//    var execute=end-start
-//    alert(start+"   les temps   "+end+"temps d'execution :"+execute);
-// })
-// .catch((err) =>{
-  
-//    alert(JSON.stringify(err));
-// })
-
-// const config ={
-//    Username :"sandjonyves@gmail.com",
-//    password: "BB15C77A9CEEB25B9BF5A28B16BED6D5A060",
-//    Host : "smtp.elasticemail.com",
-//    Port : 2525,
-//    To : "sandjonyves@gmail.com",
-//    from:"sandjonyves@gmail.com",
-//    Subject:"this is my conctact",
-//    Body : "fdsfdsdffdsfdsfdsds"
-
-
-// };
-// if(window.Email){
-//    window.Email.send(config).then(() => alert("bonjour"))
-// }
 
 
 
@@ -538,34 +626,43 @@ formNo === 2 && <div>
          Choix de la classe 
       </h1>
    
-      <div >
+      <div className={but} >
          {tabClass.map((element) =>{
-              return <ul className={but}  onClick={handleNext} >
-              <button 
-             
-                 value={element}
-                
-                
-                 className={Style}
-                 {...register("class")}>
-                  {element}
-              </button>
-           </ul>
+              return   <div className={buts}><label htmlFor={element} className={Style}>
+              {element} 
+              <input  type="radio" 
+               class="checksMs"
+                onClick={change} 
+                {...registers("class")} 
+                 value={element} 
+                 className={Styles}   /> 
+           </label>
+           </div>
          })}
      </div>
-      <div class=" space-x-20 mt-10  text-center  
-          items-center justify-between">
-         <button onClick={all2}   
-               class="butNexts" 
-               id="butNext" 
-               className={StylePev} >
-                prec
+   
+   <div>
+      <div class={ButValid}>
+         <button  onClick={all2} 
+          className={precButton} 
+           
+        
+          type="button">
+           prec
          </button>
-   </div> 
+         <button disable id="butNext2"  
+          className=" bg-blue-500 hover:bg-blue-700 
+
+         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
+          " >
+           suivant
+         </button>
+         
+   </div>
  </div>
 </div>
 </div>  
-
+</div>
 }
 
 
@@ -594,9 +691,9 @@ khjhjhjhjh</div> */}
          <div className="text-center"> <h1 htmlFor="how can we joint you text-center"
           className={StyleTitle}>Comment pouvons nous vous contacté </h1>
          </div>
-         <label htmlFor="name " className="">nom</label>
+         <label htmlFor="name " className="">Nom</label>
          <input type="text" className="p-2 border boder-slate-400 mt-1 outline-0
-         rounded-md" placeholder="enter your name"  {...register("name",{required:true,
+         rounded-md" placeholder="Serad education"  {...register("name",{required:true,
          minLength:2}
          )} />
         {errors.name && <p className="text-red-300">champ vide </p>}
@@ -606,7 +703,7 @@ khjhjhjhjh</div> */}
          <label htmlFor="what is your number phone" className=""> numero de telephone</label>
          
         {/* prefice un champ */}
-         <input type="text" placeholder="654340911"  className="p-2 border boder-slate-400 mt-1 outline-0
+         <input type="text" placeholder="691722067"  className="p-2 border boder-slate-400 mt-1 outline-0
          rounded-md"  
            {...register("number", {
             required: true,
@@ -631,10 +728,10 @@ khjhjhjhjh</div> */}
             {errors.number && errors.number.type ==="required" &&<p className="text-red-300"> champ vide</p>}
       </div>
       <div className="flex flex-col mb-2 ">
-      <h1 htmlFor="Où habite votre enfant " className=""> adresse email</h1>
+      <h1 htmlFor="Où habite votre enfant " className=""> Adresse email</h1>
          <input type="text" 
          className="p-2 border boder-slate-400 mt-1 outline-0
-         rounded-md" placeholder="serad@gmail.com" 
+         rounded-md" placeholder="serad.education@gmail.com" 
          {...register("email",{
             required:true,
             pattern : /^([a-z]||[0-9])/
@@ -708,32 +805,41 @@ formNo2 === 2 && <div>
             Choix de la classe
          </h1>
          
-         <div >
-             {tabClassSecondaire.map((element) =>{
+         
+      <div className={but} >
+         {tabClassSecondaire.map((element) =>{
+              return   <div className={buts}><label htmlFor={element} className={Style}>
+              {element} 
+              <input  type="radio" 
+               class="checksMs"
+                onClick={change2} 
+                {...registers("class")} 
+                 value={element} 
+                 className={Styles}   /> 
+           </label>
+           </div>
+         })}
+     </div>
+   
+   <div>
+      <div class={ButValid}>
+         <button  onClick={all21} 
+          className={precButton} 
+           
+        
+          type="button">
+           prec
+         </button>
+         <button disable id="butNext2"  
+          className=" bg-blue-500 hover:bg-blue-700 
 
-               return <ul> <div className={buts}>
-           
-               <button id="one" 
-                  value={element}
-                  {...register("class")} 
-                  onClick={handleNext2} 
-                  className={Style} >
-                     {element}
-                  </button>
-           
-            </div></ul>
-             })}
-         </div>
-    
-         <div class=" space-x-20 mt-10  text-center  
-             items-center justify-between">
-            <button onClick={handleprev2}   
-                  class="butNexts" 
-                  id="butNext" 
-                  className={StylePev} >
-                 prec
-            </button>
-      </div> 
+         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
+          " >
+           suivant
+         </button>
+         
+   </div>
+ </div> 
     </div>
    </div>
    <div className={font}></div>
@@ -745,64 +851,6 @@ formNo2 === 2 && <div>
 
 {/* {
 
-
-   formNo2 === 3 && <div>
-
-  
-   <div className=" p-5 max-[500px]:h-[1000px] 
-  w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
-      <h1 className={StyleTitle}> Choix des matieres</h1>
-   <div className={buts}>
-      <label htmlFor="Mathematique   " className="bg-blue-500 text-white">
-      <h1 className="text-center text-xl "> matiere scientique </h1>  
-
-      </label>
-   </div>
- <div>
-   {tabMatiereSecondaireScintifique.map((elmt)=>{
-      return <div className={buts}>
-      <label htmlFor="Mathematique   " className={Style}>
-         {elmt}
-         <input  type="checkbox" class="checksM" onClick={radioValue2} {...register("matiere")} value={elmt}  className={Styles}  /> 
-      </label>
-   </div>
-   })}
- </div>
- <div className={buts}>
-      <label htmlFor="Mathematique   " className="bg-blue-500 text-white">
-      <h1 className="text-center text-xl "> matiere literaire </h1>  
-
-      </label>
-   </div>
- <div>
-
-   {tabMatiereSecondaireLiteraire.map((elmt)=>{
-      return <div className={buts}>
-      <label htmlFor="Mathematique   " className={Style}>
-         {elmt}
-         <input  type="checkbox" class="checksM" onClick={radioValue2} {...register("matiere")} value={elmt}  className={Styles}  /> 
-      </label>
-   </div>
-   })}
- </div>
-   <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button onClick={handleprev2}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2  px-4 rounded focus:outline-none focus:shadow-outline" 
-          type="button">
-           prec
-         </button>
-         <button disable id="butNext2"   className=" bg-blue-500 hover:bg-blue-700 
-         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
-          " >
-           suivant
-         </button>
-   </div>
-   </div>
-</div>
-</div>
-</div>
 
 
 } */}
@@ -822,19 +870,19 @@ formNo2 === 2 && <div>
       <div className="text-center"> <h1 htmlFor="how can we joint you text-center"
        className={StyleTitle}>Comment pouvons nous vous contacté </h1>
       </div>
-      <label htmlFor="name " className="">nom</label>
+      <label htmlFor="name " className="">Nom</label>
       <input type="text" className="p-2 border boder-slate-400 mt-1 outline-0
-      rounded-md" placeholder="enter your name"  {...register("name",{required:true,
+      rounded-md" placeholder="Serad education"  {...register("name",{required:true,
       minLength:2}
       )} />
      {errors.name && <p className="text-red-300">champ vide </p>}
    </div>
    
    <div className="flex flex-col mb-2 ">
-      <label htmlFor="what is your number phone" className=""> numero de telephone</label>
+      <label htmlFor="what is your number phone" className=""> Numero de telephone</label>
       
      {/* prefice un champ */}
-      <input type="text" placeholder="654340911"  className="p-2 border boder-slate-400 mt-1 outline-0
+      <input type="text" placeholder="691722067"  className="p-2 border boder-slate-400 mt-1 outline-0
       rounded-md"  
         {...register("number", {
          required: true,
@@ -859,10 +907,10 @@ formNo2 === 2 && <div>
          {errors.number && errors.number.type ==="required" &&<p className="text-red-300"> champ vide</p>}
    </div>
    <div className="flex flex-col mb-2 ">
-   <h1 htmlFor="Où habite votre enfant " className=""> adresse email</h1>
+   <h1 htmlFor="Où habite votre enfant " className=""> Adresse email</h1>
       <input type="text" 
       className="p-2 border boder-slate-400 mt-1 outline-0
-      rounded-md" placeholder="serad@gmail.com" 
+      rounded-md" placeholder="serad.education@gmail.com" 
       {...register("email",{
          required:true,
          pattern : /^([a-z]||[0-9])/
@@ -916,7 +964,7 @@ formNo2 === 2 && <div>
            rounded focus:outline-none 
            focus:shadow-outline 
           " >
-           envoiyer</a>
+           Finir</a>
          
          
 </div>

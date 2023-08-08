@@ -28,7 +28,7 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
                 <input  type="checkbox"
                   id="checksM " class="checksMs"
                    onClick={tabFunction.radioValue2} 
-                   {...registers("matiere ")}  
+                   {...registers("matiere")}  
                    value={element} 
                    className={tabVars.Styles}   /> 
              </label>

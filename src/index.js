@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import APropos from './composent/OtherCoponent/APropos';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -76,6 +76,12 @@ const router = createBrowserRouter([
     element:<Encardreur/>
 
   },
+  {
+    path: "/aPropos",
+    element:<APropos/>
+
+  },
+
 
 
 

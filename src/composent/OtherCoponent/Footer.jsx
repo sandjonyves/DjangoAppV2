@@ -112,7 +112,7 @@ function Footers(params) {
             <div>
               <Footer.Title title="Suivez-nous" />
               <Footer.LinkGroup col>
-                <Footer.Link href="#">
+                <Footer.Link href="https://www.facebook.com/profile.php?id=100070052982481">
                   Facebook
                 </Footer.Link>
                 <Footer.Link href="#">
@@ -142,7 +142,7 @@ function Footers(params) {
           />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
-              href="#"
+              href="https://www.facebook.com/profile.php?id=100070052982481"
               icon={BsFacebook}
             />
             <Footer.Icon

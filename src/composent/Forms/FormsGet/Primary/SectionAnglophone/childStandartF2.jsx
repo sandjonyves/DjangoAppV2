@@ -14,8 +14,8 @@ function Matter2({tabVars,tabMatirePrimaire,tabFunction,registers }) {
        w-[400px] max-[332px]:w-[300px]
          rounded-md shadow-md bg-white 
          h-auto rounded-md shadow-md
-       bg-white p-2 md:my-5 md:mt-20 
-       mt-[700px]">      <h1 className={tabVars.StyleTitle}> CHOICE OF MATERIALS</h1>
+       bg-white p-2 md:my-5 md:mt-[900px]
+       mt-[900px]">      <h1 className={tabVars.StyleTitle}> CHOICE OF MATERIALS</h1>
     
    
    <div>
