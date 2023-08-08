@@ -19,6 +19,7 @@ import NewForm from './composent/Forms/NewForm';
 import ChooseStandardA from './composent/Forms/FormsGet/Primary/SectionAnglophone/ChooseStandartA';
 import ChooseStandardF from './composent/Forms/FormsGet/Primary/sectionFrancophone/ChooseStandartF';
 import Encardreur from './composent/Forms/formPost/Encardreur';
+import DismissableModal from './composent/OtherCoponent/Modal2';
 
 const router = createBrowserRouter([
   {
@@ -78,7 +79,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/aPropos",
-    element:<APropos/>
+    element:<DismissableModal/>
 
   },
 

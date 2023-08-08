@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import React from "react"
-import { Button } from "flowbite-react"
+import React, { useState } from "react"
+import { Button, Modal } from "flowbite-react"
 function Bodybutton(params) {
 
       let but="text-white opacity-100 bg-blue-500 w-48 h-16 rounded-lg text-lg focus:shadow-outline"
@@ -10,7 +10,8 @@ function Bodybutton(params) {
        const [showModals, setShowModals] = React.useState(false);
        const [showModalss, setShowModalss] = React.useState(false);
     
-     
+       const [openModal, setOpenModal] = useState('dismissible')
+       const props = { openModal, setOpenModal };
        return(
     <div>
 
@@ -82,53 +83,28 @@ function Bodybutton(params) {
       </button> */}
       {showModal  ?  (
         <>
-          <div
-            className="bg-red-400 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
-            <div className=" w-auto my-6 mx-auto max-w-3xl">
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold capitalize">
-                    obtenir de l'aide gratuitement avec serad eduction 
-                  </h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      X
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    nous vous aidons à voirs  tout les difficuletées dont rencontre votre enfant 
-                    au niveau scolaire et en fonction des problemes  nous vous procurons des resolutions
-                    strategiques et performentents   </p>            </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    fermer
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    
-                  >
-                    <Link to="https://wa.me/+237654340911">Consulter</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
+         <Modal dismissible show={props.openModal === 'dismissible'} onClose={() => props.setOpenModal(undefined)}>
+        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+              companies around the world are updating their terms of service agreements to comply.
+            </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to
+              ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as
+              possible of high-risk data breaches that could personally affect them.
+            </p>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => props.setOpenModal(undefined)}>I accept</Button>
+          <Button color="gray" onClick={() => props.setOpenModal(undefined)}>
+            Decline
+          </Button>
+        </Modal.Footer>
+      </Modal>
         </>
       ) : null}
     </>
