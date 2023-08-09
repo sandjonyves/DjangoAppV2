@@ -12,10 +12,11 @@ import Modal from "../../../../OtherCoponent/Modal";
 import React from 'react'
 import Matters from "./Test";
 import Modal2 from "../../../../OtherCoponent/Modal2";
+import Loading from "../../../../OtherCoponent/Loading";
 
 
 
-function ChooseStandard(props){
+function ChooseStandard(){
 
   //initiallisation des outils de gestion des formilaires de react js
    const {handleSubmit,register,formState: {errors}} = useForm()
@@ -450,7 +451,8 @@ return tab
 
 const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
-
+const [openModal, setOpenModal] = useState('')
+const props = { openModal, setOpenModal };
 
 const verify = false
 const onSubmit = (data) => {
@@ -468,8 +470,9 @@ const onSubmit = (data) => {
 
    
    setIsLoading(true)
+   alert(isLoading)
    setIsLoading2(true)
-
+  props.setOpenModal('dismissible') 
 
 
    axios ({
@@ -521,7 +524,7 @@ const onSubmit = (data) => {
       alert(res);
      
 
-   let but = document.querySelector("#butRequest")
+   // let but = document.querySelector("#butRequest")
    // let newBut = document.querySelector("#cont")
    // let newMsg = document.createElement("p") 
    // newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
@@ -529,13 +532,14 @@ const onSubmit = (data) => {
  
    // newBut.className="text-red-600  capitalyse"
    
-   but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+   // but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
 
    // b.disabled=false;
    
    
   
       setIsLoading2(false)
+      // props.setOpenModal(undefined) 
    })
 
 
@@ -781,8 +785,8 @@ khjhjhjhjh</div> */}
           " type = "submit"  >
            suivant
          </button>
-         {isLoading && 
-   <Modal tabVars={tabVar} showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
+         {props.openModal === 'dismissible' && 
+   <Modal2 tabVars={tabVar} openModal={openModal} setOpenModal={setOpenModal} isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
 
  }
    </div>
