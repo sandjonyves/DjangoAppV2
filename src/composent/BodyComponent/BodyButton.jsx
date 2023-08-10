@@ -94,7 +94,7 @@ function Bodybutton(params) {
       >
         Open regular modal
       </button> */}
-      {props.openModal === 'dismissible' ?  (
+      {showModal ?  (
         <>
         <Modal dismissible show={props.openModal === 'dismissible'} onClose={() => props.setOpenModal(undefined)}>
         <Modal.Header>   <h2>
@@ -116,8 +116,12 @@ function Bodybutton(params) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => props.setOpenModal(undefined)}>I accept</Button>
-          <Button color="gray" onClick={() => props.setOpenModal(undefined)}>
+          <Link to="https://wa.me/c/237691722067">
+          <Button  >
+            obtenir de l'aide
+          </Button>
+          </Link>
+          <Button color="red" className="bg-red-400" onClick={() => props.setOpenModal(undefined)}>
             Decline
           </Button>
         </Modal.Footer>
@@ -169,7 +173,7 @@ function Bodybutton(params) {
         <Modal.Footer>
           
           
-          <Button color="gray" onClick={() => props1.setOpenModals(undefined)}>
+          <Button color="red" className="bg-red-400" onClick={() => props1.setOpenModals(undefined)}>
             Decline
           </Button>
           <Link to="/choose"> <Button >obtenir</Button></Link>
@@ -208,7 +212,7 @@ function Bodybutton(params) {
         <Modal.Footer>
           
           
-          <Button color="gray" onClick={() => props2.setOpenModalss(undefined)}>
+          <Button color="red" className="bg-red-400" onClick={() => props2.setOpenModalss(undefined)}>
             Decline
           </Button>
           <Link to="/Encardreur"> <Button >Devenir</Button></Link>

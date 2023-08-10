@@ -145,17 +145,9 @@ function Footers(params) {
               href="https://www.facebook.com/profile.php?id=100070052982481"
               icon={BsFacebook}
             />
+            
             <Footer.Icon
-              href="#"
-              icon={BsInstagram}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsTwitter}
-            />
-           
-            <Footer.Icon
-              href="#"
+              href="https://wa.me/c/237691722067"
               icon={BsTelephone}
             />
           </div>

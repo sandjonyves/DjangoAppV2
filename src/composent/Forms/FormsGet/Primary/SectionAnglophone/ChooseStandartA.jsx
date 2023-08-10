@@ -426,7 +426,7 @@ if (verif==true) {
    
 }
 const tab =[priceMatter,price]
-alert(price)
+
 return tab
  } 
 
@@ -456,6 +456,7 @@ const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
 const [openModal, setOpenModal] = useState('')
 const props = { openModal, setOpenModal };
+const [verify, setVerify] = useState(false)
 
 
 const onSubmit = (data) => {
@@ -498,48 +499,14 @@ const onSubmit = (data) => {
       }
    }).then((res) =>{
       //setIsLoading(false)
-      const msg = "une erreur c'est produise "
-      alert(data.name)
-
-   let but = document.querySelector("#butRequest")
-   let newBut = document.querySelector("#cont")
-   let newMsg = document.createElement("p")
-   newMsg.textContent="cliquer sur le bouton pour finir votre demande "
-   newBut.append(newMsg)
-   but.removeAttribute("disable")
-   newBut.className="text-green-600  capitalyse"
-   
-   but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-
-   // b.disabled=false;
-   
-   
-   but.addEventListener("click",()=>{
+      setVerify(true)
      
-       but.setAttribute("href"," http://127.0.0.1:8000/")
-       console.log(but)
-   })
-      
+      setIsLoading2(false)
+ 
       
    }).catch((res) =>{
-      const msg = "une erreur c'est produise "
-      alert(res);
+      
      
-
-   let but = document.querySelector("#butRequest")
-   let newBut = document.querySelector("#cont")
-   let newMsg = document.createElement("p") 
-   newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
-   newBut.append(newMsg)
- 
-   newBut.className="text-red-600  capitalyse"
-   
-   but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-
-   // b.disabled=false;
-   
-   
-  
       setIsLoading2(false)
    })
 
@@ -627,7 +594,7 @@ const secondCycle =["From3","From4"]
 const thirdCycle = ["From5","lawer","upper"]
 const  tabMatiereSecondaireLiteraire = ["Mathematics","Additional math","Further maths","Physics","Chemistry","Biology","human Biology","Computer science","Philosophy" ,"French","English","LCN(national language and culture)","HistGeo/MEC", " Other Languages(Latin, Chinese, Spanish, German ...)","Cinematographic Arts"]
  
-const tabVar= {font,font2,ButValid,precButton,StyleTitle,Styles,buts,StylePev}
+const tabVar= {font,verify,font2,ButValid,precButton,StyleTitle,Styles,buts,StylePev}
 const tabFunction = {radioValue,handleprev,handleNext,all2}
 const tabFunction2 = {radioValue2,handleprev2,handleNext2,all21}
 
@@ -965,69 +932,6 @@ formNo2 === 2 && <div>
 }
 
 
-{/* {
-
-
-   formNo2 === 3 && <div>
-
-  
-   <div className=" p-5 max-[500px]:h-[1000px] 
-  w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
-      <h1 className={StyleTitle}> Choix des matieres</h1>
-   <div className={buts}>
-      <label htmlFor="Mathematique   " className="bg-blue-500 text-white">
-      <h1 className="text-center text-xl "> matiere scientique </h1>  
-
-      </label>
-   </div>
- <div>
-   {tabMatiereSecondaireScintifique.map((elmt)=>{
-      return <div className={buts}>
-      <label htmlFor="Mathematique   " className={Style}>
-         {elmt}
-         <input  type="checkbox" class="checksM" onClick={radioValue2} {...register("matiere")} value={elmt}  className={Styles}  /> 
-      </label>
-   </div>
-   })}
- </div>
- <div className={buts}>
-      <label htmlFor="Mathematique   " className="bg-blue-500 text-white">
-      <h1 className="text-center text-xl "> matiere literaire </h1>  
-
-      </label>
-   </div>
- <div>
-
-   {tabMatiereSecondaireLiteraire.map((elmt)=>{
-      return <div className={buts}>
-      <label htmlFor="Mathematique   " className={Style}>
-         {elmt}
-         <input  type="checkbox" class="checksM" onClick={radioValue2} {...register("matiere")} value={elmt}  className={Styles}  /> 
-      </label>
-   </div>
-   })}
- </div>
-   <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button onClick={handleprev2}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2  px-4 rounded focus:outline-none focus:shadow-outline" 
-          type="button">
-           prec
-         </button>
-         <button disable id="butNext2"   className=" bg-blue-500 hover:bg-blue-700 
-         text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline opacity-0
-          " >
-           suivant
-         </button>
-   </div>
-   </div>
-</div>
-</div>
-</div>
-
-
-} */}
 
 {formNo2 === 3&& <div ><Matter2 tabVars={tabVar} tabMatirePrimaire={tabMatiereSecondaireLiteraire} tabFunction = {tabFunction2} registers={registers}/>
 </div>}
@@ -1135,14 +1039,7 @@ formNo2 === 2 && <div>
         next
       </button>
 </div>
-<a disable id="butMail" onClick={Mail}  
-       className=" bg-blue-500 hover:bg-blue-700 
-         w-full text-white opacity-0 
-          font-bold py-2 my-2 px-4
-           rounded focus:outline-none 
-           focus:shadow-outline 
-          " >
-           next</a>
+
          
          
 </div>

@@ -454,7 +454,7 @@ const [isLoading2,setIsLoading2] = useState(false)
 const [openModal, setOpenModal] = useState('')
 const props = { openModal, setOpenModal };
 
-const verify = false
+const [verify, setVerify] = useState(false)
 const onSubmit = (data) => {
   
  const tab =  priceAll(data)
@@ -494,50 +494,16 @@ const onSubmit = (data) => {
           'Price':tab[0]
       }
    }).then((res) =>{
-      //setIsLoading(false)
-      const msg = "une erreur c'est produise "
-      alert(data.name)
-       verify=true
-   let but = document.querySelector("#butRequest")
-   // let newBut = document.querySelector("#cont")
-   // let newMsg = document.createElement("p")
-   // newMsg.textContent="cliquer sur le bouton pour finir votre demande "
-   // newBut.append(newMsg)
-   // but.removeAttribute("disable")
-   // newBut.className="text-green-600  capitalyse"
-   
-   but.className="bg-blue-500 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-
-   // b.disabled=false;
-   
-   
-   but.addEventListener("click",()=>{
-     
-       but.setAttribute("href"," http://127.0.0.1:8000/")
-       console.log(but)
       
-   })
+       setVerify(true)
+  
+       setIsLoading2(false)
+
       
    setIsLoading2(false)    
    }).catch((res) =>{
-      const msg = "une erreur c'est produise "
-      alert(res);
-     
-
-   // let but = document.querySelector("#butRequest")
-   // let newBut = document.querySelector("#cont")
-   // let newMsg = document.createElement("p") 
-   // newMsg.textContent="une Erreur c'est produise nous sommes desolé    '''veillez réessaiyé''' "
-   // newBut.append(newMsg)
- 
-   // newBut.className="text-red-600  capitalyse"
-   
-   // but.className="bg-blue-100 text-white active:bg-blue-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-
-   // b.disabled=false;
-   
-   
-  
+      
+      setVerify(false)
       setIsLoading2(false)
       // props.setOpenModal(undefined) 
    })

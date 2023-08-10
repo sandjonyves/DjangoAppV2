@@ -63,12 +63,16 @@ return <div> {
     formNo === 4 && <div>
     <div> 
     <div className={tabVars.font}>
-   <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
+    <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
    from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
    flex 
    justify-center items-center ">
-   <div className="card w-[500px]    h-auto rounded-md shadow-md bg-white p-5 my-10">
-      <h1 className={tabVars.StyleTitle}>choice of number day</h1>
+ <div className="card  md:w-[500px] 
+   w-[400px] max-[332px]:w-[300px] 
+    rounded-md shadow-md bg-white 
+       h-auto rounded-md shadow-md 
+       bg-white p-2 md:my-5 
+       mt-20">   <h1 className={tabVars.StyleTitle}>choice of number day</h1>
     
    
    <div>
@@ -113,8 +117,16 @@ return <div> {
 
         formNo === 5 && <div>
         <div className={tabVars.font}>
-        <div className="card  md:w-[400px] w-[300px] max-[332px]:w-[250px]  
-        rounded-md shadow-md bg-white  my-20">
+        <form id = "form" className="w-screen h-screen  bg-gradient-to-r 
+   from-cyan-500 to-blue-500 flex  justify-center items-center p-5 max-[500px]:h-[1000px] 
+   flex 
+   justify-center items-center ">
+ <div className="card  md:w-[500px] 
+   w-[400px] max-[332px]:w-[300px] 
+    rounded-md shadow-md bg-white 
+       h-auto rounded-md shadow-md 
+       bg-white p-2 md:my-5 
+       mt-20">
              
               <h1 className={tabVars.StyleTitle}>
                 choice of number of hours
@@ -137,9 +149,8 @@ return <div> {
                  })}
              </div>
              <div>
-      <div class=" space-x-20 mt-10  text-center   items-center justify-between">
-         <button  onClick={tabFunction.handleprev2}  class=" bg-blue-500 hover:bg-blue-700 text-white
-          font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+             <div class={tabVars.ButValid}>
+         <button  onClick={tabFunction.handleprev}  class={tabVars.precButton} 
           type="button">
            prev
          </button>
@@ -152,6 +163,7 @@ return <div> {
    </div>
    </div> 
          </div>
+         </form>
         </div>
         </div>  
         
