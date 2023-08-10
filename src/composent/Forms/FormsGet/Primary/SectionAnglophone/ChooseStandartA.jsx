@@ -9,10 +9,11 @@ import Price from "./childForPriceF";
 import Price2 from "./childForPriceF2";
 import Matter2 from "./childStandartF2";
 import Modal from "../../../../OtherCoponent/Modal";
+import Modal2 from "../../../../OtherCoponent/Modal2";
 
 
 
-function ChooseStandard(props){
+function ChooseStandard(){
 
   //initiallisation des outils de gestion des formilaires de react js
    const {handleSubmit,register,formState: {errors}} = useForm()
@@ -95,7 +96,7 @@ function ChooseStandard(props){
    }
      function all21() {
         handleprev2()
-        ctl()
+        
      } 
      function all2() {
       handleprev()
@@ -453,6 +454,10 @@ return tab
 
 const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
+const [openModal, setOpenModal] = useState('')
+const props = { openModal, setOpenModal };
+
+
 const onSubmit = (data) => {
   let vl = data
  const tab =  priceAll(data)
@@ -466,7 +471,7 @@ const onSubmit = (data) => {
 
    console.log(data)
 
-   
+   props.setOpenModal('dismissible') 
    setIsLoading(true)
    setIsLoading2(true)
 
@@ -688,7 +693,7 @@ formNo === 2 && <div>
          choose of class
       </h1>
    
-      <div className={but} >
+      <div  >
          {tabClass.map((element) =>{
               return   <div className={buts}><label htmlFor={element} className={Style}>
               {element} 
@@ -893,11 +898,10 @@ formNo === 2 && <div>
          
          
 </div>
-{isLoading && 
-   <Modal showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
+{props.openModal === 'dismissible' && 
+   <Modal2 tabVars={tabVar} openModal={openModal} setOpenModal={setOpenModal} isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
 
  }
-
 </form>
 </div>
 </div>
@@ -918,7 +922,7 @@ formNo2 === 2 && <div>
          </h1>
          
                
-      <div className={but} >
+      <div >
          {tabClassSecondaire.map((element) =>{
               return   <div className={buts}><label htmlFor={element} className={Style}>
               {element} 
@@ -1142,8 +1146,8 @@ formNo2 === 2 && <div>
          
          
 </div>
-{isLoading && 
-   <Modal showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal>
+{props.openModal === 'dismissible' && 
+   <Modal2 tabVars={tabVar} openModal={openModal} setOpenModal={setOpenModal} isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
 
  }
 

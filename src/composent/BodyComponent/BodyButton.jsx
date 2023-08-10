@@ -11,6 +11,12 @@ function Bodybutton(params) {
        const [showModalss, setShowModalss] = React.useState(false);
        const [openModal, setOpenModal] = useState('dismissible')
        const props = { openModal, setOpenModal };
+
+       const [openModals, setOpenModals] = useState('dismissible')
+       const props1 = { openModals, setOpenModals};
+    
+       const [openModalss, setOpenModalss] = useState('dismissible')
+       const props2 = { openModalss, setOpenModalss};
     
      
        return(
@@ -47,7 +53,7 @@ function Bodybutton(params) {
                     <td >
                        <div class="but" className={StyleTd} > 
                        <Button className="w-full h-20" onClick={() => {
-                        setOpenModal('dismissible')
+                        props.setOpenModal('dismissible')
                         setShowModal(true)}}>
                         obtenir de l'aide Gratuit
                         </Button> </div>
@@ -56,7 +62,9 @@ function Bodybutton(params) {
                 <tr>
                    <td >
                    <div className={StyleTd}>
-                    <Button  onClick={() => setShowModalss(true)}>
+                    <Button  onClick={() => {
+                      props1.setOpenModals('dismissible')
+                      setShowModalss(true) }}>
                       comment obtenir un encadreur
                       </Button></div> 
 
@@ -65,7 +73,9 @@ function Bodybutton(params) {
                     <td >
                     <div className={StyleTd}>
                        
-                        <Button className="h-20" onClick={() => setShowModals(true) } > 
+                        <Button className="h-20" onClick={() => {
+                           props2.setOpenModalss('dismissible')
+                          setShowModals(true) }} > 
                              devinir un encadreur
                         </Button>
                         </div>
@@ -84,16 +94,17 @@ function Bodybutton(params) {
       >
         Open regular modal
       </button> */}
-      {showModal  ?  (
+      {props.openModal === 'dismissible' ?  (
         <>
         <Modal dismissible show={props.openModal === 'dismissible'} onClose={() => props.setOpenModal(undefined)}>
-        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Header>   <h2>
+          obtenir de l'aide gratuitement avec serad eduction </h2></Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
+         
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-              companies around the world are updating their terms of service agreements to comply.
-              <Modal.Header>  obtenir de l'aide gratuitement avec serad eduction </Modal.Header>
+             
+              
         
          
             nous vous aidons à voirs  tout les difficuletées dont rencontre votre enfant 
@@ -101,11 +112,7 @@ function Bodybutton(params) {
                     strategiques et performentents 
             
             </p>
-            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to
-              ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as
-              possible of high-risk data breaches that could personally affect them.
-            </p>
+            
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -125,33 +132,26 @@ function Bodybutton(params) {
     
  
     <>
-          <div
+          {/* <div
             className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl ">
               {/*content*/}
-              <div className="bg-gray-300 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold capitalize">
-                   comment Obtenir un encardreur en un instand avec Serad Education
-                  </h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModalss(false)}
-                  >
-                    <span className="bg-transparent text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      X
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  
-                  <div>
-                    
-                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                    1  cliquer sur le boutton obtnir 
+             
+
+          <Modal dismissible show={props1.openModals === 'dismissible'} onClose={() => props1.setOpenModals(undefined)}>
+        <Modal.Header>comment Obtenir un encardreur en un instand avec Serad Education</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            <h2>
+          obtenir de l'aide gratuitement avec serad eduction </h2>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+             
+              
+        
+           
+            <p className="my-4 text-slate-500 text-lg leading-relaxed">
+                    1  cliquer sur le boutton obtenir 
                       </p> 
 
                       <p className="my-4 text-slate-500 text-lg leading-relaxed">
@@ -161,29 +161,20 @@ function Bodybutton(params) {
                       <p className="my-4 text-slate-500 text-lg leading-relaxed">
                     3  puis patienter quelques instants en fin de reçevoir le message de recption
                       </p> 
-                  </div>
-                             </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModalss(false)}
-                  >
-                    fermer
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    
-                  >
-                    <Link to="/choose">obtenir</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
+            
+            </p>
+            
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </Modal.Body>
+        <Modal.Footer>
+          
+          
+          <Button color="gray" onClick={() => props1.setOpenModals(undefined)}>
+            Decline
+          </Button>
+          <Link to="/choose"> <Button >obtenir</Button></Link>
+        </Modal.Footer>
+      </Modal>
         </>
  
  )
@@ -193,32 +184,14 @@ function Bodybutton(params) {
     
  
     <>
-          <div
-            className=" justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none "
-          >
-            <div className="absolute h-20 w-auto my-6 mx-auto max-w-3xl ">
-              {/*content*/}
-              <div className="bg-gray-300 border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-3xl font-semibold capitalize">
-                   Comment devenir un encardreur en un instand chez Serad Education
-                  </h3>
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModals(false)}
-                  >
-                    <span className="bg-transparent text-black  h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      X
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <div className="relative p-6 flex-auto">
-                  
-                  <div>
-                    
-                  <p className="my-4 text-slate-500 text-lg  font-semibold  leading-relaxed">
+
+          <Modal dismissible show={props2.openModalss === 'dismissible'} onClose={() => props2.setOpenModalss(undefined)}>
+        <Modal.Header>   Comment devenir un encardreur en un instand chez Serad Education</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+       
+          
+          <p className="my-4 text-slate-500 text-lg  font-semibold  leading-relaxed">
                        Pour deninir un encadreur de serad il faut:
                        </p> 
                        <p className="my-4 mx-5 text-slate-500 text-lg leading-relaxed">-Remplir le formilaire proposé par Serad</p>
@@ -229,33 +202,19 @@ function Bodybutton(params) {
                        <p className="my-4 mx-5 text-slate-500 text-lg leading-relaxed">
                         -Et en fin nos allons vous présentez le reglement et les modalitées
                        </p>
- 
-                  </div>
-                             </div>
-                {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModals(false)}
-                  >
-                    fermer
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold
-                     uppercase text-sm px-6 py-3 rounded shadow 
-                     hover:shadow-lg outline-none focus:outline-none
-                      mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    
-                  >
-                    <Link to="/Encardreur">devenir</Link>
-                  </button>
-                </div>
-              </div>
-            </div>
+            
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        </Modal.Body>
+        <Modal.Footer>
+          
+          
+          <Button color="gray" onClick={() => props2.setOpenModalss(undefined)}>
+            Decline
+          </Button>
+          <Link to="/Encardreur"> <Button >Devenir</Button></Link>
+        </Modal.Footer>
+      </Modal>
+          
         </>
  
  )

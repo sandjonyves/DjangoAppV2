@@ -470,7 +470,7 @@ const onSubmit = (data) => {
 
    
    setIsLoading(true)
-   alert(isLoading)
+
    setIsLoading2(true)
   props.setOpenModal('dismissible') 
 
@@ -976,8 +976,8 @@ formNo2 === 2 && <div>
          
          
 </div>
-{isLoading && 
-   <Modal2 showModal={isLoading} setShowModal={setIsLoading} isLoading2={isLoading2} setIsLoading2={setIsLoading2}></Modal2>
+{props.openModal === 'dismissible' && 
+   <Modal2 tabVars={tabVar} openModal={openModal} setOpenModal={setOpenModal} isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
 
  }
 

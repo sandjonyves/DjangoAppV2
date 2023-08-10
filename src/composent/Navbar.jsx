@@ -39,7 +39,7 @@ function Navbars() {
       <Navbar.Collapse>
         <Navbar.Link
           active
-          href="#"
+          href="/"
         >
           <p>
             Home
