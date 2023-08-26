@@ -2,10 +2,11 @@
 
 import { Alert, Button, Modal } from 'flowbite-react';
 
-import Loading from './Loading';
-import { HiInformationCircle } from 'react-icons/hi';
 
-export default function Modal2({tabVars,openModal,setOpenModal,isLoading2,setIsLoading2}) {
+import { HiInformationCircle } from 'react-icons/hi';
+import Loading from '../../OtherCoponent/Loading';
+
+export default function Modal2({tabVars,openModal,setOpenModal,isLoading2}) {
   
   const props = { openModal, setOpenModal };
 
@@ -18,15 +19,16 @@ export default function Modal2({tabVars,openModal,setOpenModal,isLoading2,setIsL
         <Modal.Header>Serad Education</Modal.Header>
         <Modal.Body>
           <div  className="space-y-6">
-            
+
        
-            {tabVars.verify ===1 ?(<>
+            
+          {tabVars.verify ===1 ?(<>
             
             <Alert>cliquer sur le button "finir" pour terminer votre requette</Alert>
             <Modal.Footer><Button onClick={() => props.setOpenModal(undefined)} id="butRequest" color="red" >
             Decline
           </Button>
-           <a href="http://127.0.0.1:8000/Client/" ><Button>Finir</Button></a>
+           <a href="http://127.0.0.1:8000/Encadreur/" ><Button>Finir</Button></a>
            </Modal.Footer>
             
            </>
@@ -58,5 +60,3 @@ export default function Modal2({tabVars,openModal,setOpenModal,isLoading2,setIsL
     </>
   )
 }
-
-

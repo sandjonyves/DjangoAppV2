@@ -182,9 +182,7 @@ function ChooseStandard(){
       var checkboxes2 = document.querySelectorAll('input[type="checkbox"]');
          var b =document.querySelector("#butNext");
        
-         console.log(b);
-      
-         console.log("fdsfffffffffffffffffffffff");
+       
          
          //   b.removeAttribute("disable");
            // b.disabled=false;
@@ -222,36 +220,7 @@ function ChooseStandard(){
    }
 
    const priceAll = (data) => {
-      //    let i = 0;
-      //    let count =0
-      //       let price = 0;
-      //       alert(price);
-      //    const tabMatirePrimaire = ["matematique","science" , "hist/geo/Ecm","Français","anglais","LCN(langue et culture nationnal)"];
-      //   for (let index = 0; index < tab.length; index++) {
-       
-      //    for(let j =0;j<day.length;j++){
-            
-      //       if(tab[index]==day[j]){
-      //          count++
-               
-      //       }
-      //    }
-         
-      //   }
-      //    tab.forEach((element)=>{
-            
-      //       if (element==data[i]) {
-      //          price+=value*1050; 
-             
-      
-               
-      //       }
-      //       i++;
-           
-      //     })     
-      
-      //    price = count*price
-      //    alert(price)
+
       let count =0
             var price = 0;
             var priceMatter =0
@@ -273,7 +242,7 @@ function ChooseStandard(){
            if(a ==0){
             priceMatter = 1000  
             verif = true 
-            alert("bonjour")
+          
          }
       }
       alert(verif)
@@ -283,7 +252,7 @@ function ChooseStandard(){
             
          });
          price = count*price
-         alert("1")
+     
       } else{
                   
              for (const iterator of firstCycle) {
@@ -310,26 +279,14 @@ function ChooseStandard(){
                price+=data.hour*priceMatter;
                
             });
-            price = count*price
+            price = count*price*4
          
       }
-      alert(price)
+  
       return price
        } 
       
-        const Mail = () => {
-      
-         let but = document.querySelector("#butMail")
-         
-         // b.disabled=false;
-         
-         
-         but.addEventListener("click",()=>{
-           
-             but.setAttribute("href"," http://127.0.0.1:8000/")
-             console.log(but)
-         })
-        }
+        
       
    const onSubmit = (data) => {
       let vl = data

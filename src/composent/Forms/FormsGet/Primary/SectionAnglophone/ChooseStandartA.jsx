@@ -2,13 +2,10 @@ import { useState } from "react";
 import { Link ,Navigate,useNavigate} from "react-router-dom"
 import {useForm} from "react-hook-form"
 import axios from 'axios'
-import BodyTextTwo from "../../../../BodyComponent/BodyTextTwo";
-import Bodybutton from "../../../../BodyComponent/BodyButton";
 import Matter from "./childStandartF";
 import Price from "./childForPriceF";
 import Price2 from "./childForPriceF2";
 import Matter2 from "./childStandartF2";
-import Modal from "../../../../OtherCoponent/Modal";
 import Modal2 from "../../../../OtherCoponent/Modal2";
 
 
@@ -19,21 +16,9 @@ function ChooseStandard(){
    const {handleSubmit,register,formState: {errors}} = useForm()
 
 
-   const history = useNavigate();
-   const faireRedirection = () =>{ 
-     let url = "";
-     history(url);}
-   //  
-   const pattern = /^6[0-9]{8}$/
-
-   const veryf = () => {
-      var a = document.getElementById('butNext');
-      a.addEventListener("click",{handleNext});
-   }
 
    //declaration of constate who will be use to change form
 
-   const [datas,setData] = useState([]) 
    const [allData,setAllData] = useState([])
    
 
@@ -164,8 +149,9 @@ function ChooseStandard(){
       let verif=false;
       let index = 0
       
+     console.log()                                  
      
-      while( index < checkboxes2.length) {
+     while( index < checkboxes2.length) {
        
          
          const element = checkboxes2[index].checked;
@@ -448,7 +434,7 @@ return tab
    but.addEventListener("click",()=>{
      
        but.setAttribute("href"," http://127.0.0.1:8000/")
-       console.log(but)
+       
    })
   }
 
@@ -456,7 +442,7 @@ const [isLoading,setIsLoading] = useState(false)
 const [isLoading2,setIsLoading2] = useState(false)
 const [openModal, setOpenModal] = useState('')
 const props = { openModal, setOpenModal };
-const [verify, setVerify] = useState(false)
+const [verify, setVerify] = useState(2)
 
 
 const onSubmit = (data) => {
@@ -470,7 +456,7 @@ const onSubmit = (data) => {
 //   but.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
   
 
-   console.log(data)
+  
 
    props.setOpenModal('dismissible') 
    setIsLoading(true)
@@ -499,7 +485,7 @@ const onSubmit = (data) => {
       }
    }).then((res) =>{
       //setIsLoading(false)
-      setVerify(true)
+      setVerify(1)
      
       setIsLoading2(false)
  
@@ -507,7 +493,7 @@ const onSubmit = (data) => {
    }).catch((res) =>{
       
      
-      setIsLoading2(false)
+      setIsLoading2(0)
    })
 
 

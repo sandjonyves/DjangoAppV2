@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
-import {FaTimes,FaBars} from "react-icons/fa"
+
 //import "./style/Style_navBar.css";
-import { Link } from "react-router-dom";
+
 import { Carousel,Navbar } from "flowbite-react";
 
 function Navbars() {
@@ -27,9 +27,9 @@ function Navbars() {
          
       >
         <img
-          alt="Flowbite React Logo"
+          alt="Serad"
           className="mr-3 h-6 sm:h-9"
-          src="logo.png"
+          src="https://i.ibb.co/Zd5j0Sv/serad.png"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Serad Education
@@ -53,7 +53,7 @@ function Navbars() {
             A propos
           </p>
         </Navbar.Link>
-        <Navbar.Link herf="/Encadreur">
+        <Navbar.Link href="/Encardreur">
       
                       Devenir un encadreur
                       

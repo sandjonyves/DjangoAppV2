@@ -2,17 +2,13 @@ import { useState } from "react";
 import { Link ,Navigate,useNavigate} from "react-router-dom"
 import {useForm} from "react-hook-form"
 import axios from 'axios'
-import BodyTextTwo from "../../../../BodyComponent/BodyTextTwo";
-import Bodybutton from "../../../../BodyComponent/BodyButton";
 import Matter from "./childStandartF";
 import Price from "./childForPriceF";
 import Price2 from "./childForPriceF2";
 import Matter2 from "./childStandartF2";
-import Modal from "../../../../OtherCoponent/Modal";
 import React from 'react'
-import Matters from "./Test";
 import Modal2 from "../../../../OtherCoponent/Modal2";
-import Loading from "../../../../OtherCoponent/Loading";
+
 
 
 
@@ -419,11 +415,11 @@ if (verif==true) {
          price+=data.hour*priceMatter;
        }
        
-      price = count*price
+      price = count*price*4
    
 }
 const tab =[priceMatter,price]
-alert(price)
+
 return tab
  } 
 
@@ -454,7 +450,7 @@ const [isLoading2,setIsLoading2] = useState(false)
 const [openModal, setOpenModal] = useState('')
 const props = { openModal, setOpenModal };
 
-const [verify, setVerify] = useState(false)
+const [verify, setVerify] = useState(2)
 const onSubmit = (data) => {
   
  const tab =  priceAll(data)
@@ -466,7 +462,7 @@ const onSubmit = (data) => {
 //   but.className="bg-blue-500 hover:bg-blue-700 text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline "
   
 
-   console.log(data)
+ 
 
    
    setIsLoading(true)
@@ -495,7 +491,7 @@ const onSubmit = (data) => {
       }
    }).then((res) =>{
       
-       setVerify(true)
+       setVerify(1)
   
        setIsLoading2(false)
 
@@ -503,7 +499,7 @@ const onSubmit = (data) => {
    setIsLoading2(false)    
    }).catch((res) =>{
       
-      setVerify(false)
+      setVerify(0)
       setIsLoading2(false)
       // props.setOpenModal(undefined) 
    })

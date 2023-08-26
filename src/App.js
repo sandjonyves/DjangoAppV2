@@ -4,7 +4,7 @@ import React from "react";
 import ImageCoponentOne from "./composent/ImageComponent/ImageComponentOne";
 import BodyTextTwo from "./composent/BodyComponent/BodyTextTwo";
 import BodyLeftOne  from "./composent/BodyComponent/BodyLeftOne"
-import NameSite from "./composent/BodyComponent/NameSite"
+// import NameSite from "./composent/BodyComponent/NameSite"
 import "./App.css"
 //import Footer_end from "./composent/footer_end";
 //import {Routes,Route} from "react-router-dom";
@@ -14,9 +14,9 @@ import Bodybutton from "./composent/BodyComponent/BodyButton";
 
 
 //import ChooseStandard from "./composent/Forms/FormsGet/ChooseStandard";
-import { Alert, Avatar, Breadcrumb, Button, Card, Carousel, Footer} from 'flowbite-react';
+// import { Alert, Avatar, Breadcrumb, Button, Card, Carousel, Footer} from 'flowbite-react';
 
-import { HiHome } from 'react-icons/hi';
+// import { HiHome } from 'react-icons/hi';
 import Navbars from "./composent/Navbar";
 import Footers from "./composent/OtherCoponent/Footer";
 
@@ -197,7 +197,7 @@ return(
         <img
           alt="Flowbite React Logo"
           className="mr-3 h-6 sm:h-9"
-          src="/favicon.svg"
+        
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Flowbite React

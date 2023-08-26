@@ -1,17 +1,27 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+
 import {useForm} from "react-hook-form"
 import axios from "axios";
+import Modal2 from "./Modal2";
 function Encardreur(params) {
     const {handleSubmit,register,formState: {errors}} = useForm()
-
+   
+    const [isLoading2,setIsLoading2] = useState(false)
+    const [openModal, setOpenModal] = useState('')
+    const props = { openModal, setOpenModal };
+    const [verify, setVerify] = useState(2)
+    
     
     const  onSubmit = (data) => {
-        console.log(data)
+        
 
+
+        props.setOpenModal('dismissible') 
+        
+        setIsLoading2(true)
         axios ({
          method : "post",
-         url :"http://127.0.0.1:8001/data/add2/",
+         url :"http://127.0.0.1:8000/data/add2/",
          data : {
             'name':data.name,
             'prenom' : data.Prenom,
@@ -21,10 +31,15 @@ function Encardreur(params) {
             
          }
         }).then((res) =>{
-         alert(data.name)
+     
+         setVerify(1)
+     
+         setIsLoading2(false)
          
       }).catch((res) =>{
-         alert(res);
+         
+         setVerify(0)
+         setIsLoading2(false)
         
       })
    
@@ -33,6 +48,7 @@ function Encardreur(params) {
 
      let font = "w-screen h-screen  bg-gradient-to-r from-cyan-500 to-blue-500 flex  justify-center items-center"
 let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
+const tabVar= {font,verify}
 
   
     return <>
@@ -128,7 +144,10 @@ let StyleTitle = "capitalize text-center text-xl bg-blue-500 text-white "
          </button>
    
    </div>
+   {props.openModal === 'dismissible' && 
+   <Modal2 tabVars={tabVar} openModal={openModal} setOpenModal={setOpenModal} isLoading2={isLoading2} setIsLoading2={setIsLoading2}/>
 
+ }
 </form>
 </div>
    </div>

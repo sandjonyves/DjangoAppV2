@@ -1,6 +1,6 @@
 import { Footer } from "flowbite-react"
-import { Link } from "react-router-dom"
-import { BsDribble, BsFacebook, BsGithub, BsInstagram, BsTelephone, BsTwitter } from 'react-icons/bs';
+
+import { BsFacebook, BsTelephone} from 'react-icons/bs';
 
 function Footers(params) {
 
@@ -91,7 +91,7 @@ function Footers(params) {
               alt="..."
               href="/"
               name="Serad"
-              src="logo.png"
+              src="https://i.ibb.co/Zd5j0Sv/serad.png"
             />
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
@@ -124,10 +124,10 @@ function Footers(params) {
               <Footer.Title title="service" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">
-                politique de confidentialité
+               repetition à domicile
                 </Footer.Link>
                 <Footer.Link href="#">
-                termes et conditions
+             meilleur reussit
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -137,7 +137,7 @@ function Footers(params) {
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
             by="Serad™"
-            href="#"
+            href="/"
             year={2023}
           />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
