@@ -32,7 +32,7 @@ function Navbars() {
           src="https://i.ibb.co/Zd5j0Sv/serad.png"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Serad Education le meilleur pour tous
+          Serad Education 
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
