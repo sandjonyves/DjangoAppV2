@@ -24,13 +24,13 @@ export default function Modal2({tabVars,openModal,setOpenModal,isLoading2,setIsL
             
             <Alert>cliquer sur le button "finir" pour terminer votre requette</Alert>
             <Modal.Footer><Button onClick={() => props.setOpenModal(undefined)} id="butRequest" color="red" >
-            Decline
+            Decline a
           </Button>
            <a href="http://127.0.0.1:8000/Client/" ><Button>Finir</Button></a>
            </Modal.Footer>
             
            </>
-            ):tabVars.verify ===1 ?(<><Alert  color="failure"
+            ):tabVars.verify ===0 ?(<><Alert  color="failure"
             icon={HiInformationCircle}>une erreur c'est produise veillez reesayé</Alert>
             <Modal.Footer>
          
@@ -43,10 +43,7 @@ export default function Modal2({tabVars,openModal,setOpenModal,isLoading2,setIsL
             >veillez patientez...</p>
             <Modal.Footer>
          
-          <Button onClick={() => props.setOpenModal(undefined)}  color="red" >
-            Decline
-          </Button>
-          
+       
         </Modal.Footer></>}
            
             {isLoading2 &&  <Loading ></Loading>}

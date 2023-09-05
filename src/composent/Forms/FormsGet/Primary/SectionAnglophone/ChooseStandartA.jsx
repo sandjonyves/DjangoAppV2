@@ -411,7 +411,8 @@ if (verif==true) {
       price = count*price
    
 }
-const tab =[priceMatter,price]
+
+const tab =[priceMatter,price*4]
 
 return tab
  } 
@@ -488,12 +489,13 @@ const onSubmit = (data) => {
       setVerify(1)
      
       setIsLoading2(false)
+      
  
       
    }).catch((res) =>{
       
-     
-      setIsLoading2(0)
+     setVerify(0)
+      setIsLoading2(false)
    })
 
 
@@ -807,12 +809,15 @@ formNo === 2 && <div>
    </div>
    <div className="flex flex-col mb-2 ">
       <h1 htmlFor="Town of residence" className="">Town of residence</h1>
-         <input type="text" 
+         <select 
          className="p-2 border boder-slate-400 mt-1 outline-0
          rounded-md" placeholder=" yaounde " 
          {...register("ville",{
             required:true})}
-         />
+         >
+            <option>yaounde</option>
+            <option>Douala</option>
+         </select>
          {errors.street && <p className="text-red-300">empty field </p> }
       </div>
 
@@ -976,14 +981,15 @@ formNo2 === 2 && <div>
    </div>
    <div className="flex flex-col mb-2 ">
    <h1 htmlFor="Où habite votre enfant " className=""> Email address</h1>
-      <input type="text" 
-      className="p-2 border boder-slate-400 mt-1 outline-0
-      rounded-md" placeholder="serad.education@gmail.com" 
-      {...register("email",{
-         required:true,
-         pattern : /^([a-z]||[0-9])/
-      })}
-      />
+   <select 
+         className="p-2 border boder-slate-400 mt-1 outline-0
+         rounded-md" placeholder=" yaounde " 
+         {...register("ville",{
+            required:true})}
+         >
+            <option>yaounde</option>
+            <option>Douala</option>
+         </select>
        {errors.email && errors.email.type ==="pattern" &&(
             //  {veryf},
            <p className="text-red-300"> verify email address</p>)}

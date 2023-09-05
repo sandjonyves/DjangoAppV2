@@ -415,10 +415,10 @@ if (verif==true) {
          price+=data.hour*priceMatter;
        }
        
-      price = count*price*4
+      price = count*price
    
 }
-const tab =[priceMatter,price]
+const tab =[priceMatter,price*4]
 
 return tab
  } 
@@ -473,7 +473,7 @@ const onSubmit = (data) => {
 
    axios ({
       method:'post',
-      url:"http://127.0.0.1:8000/data/add/",
+      url:"https://testdjango-eight.vercel.app/data/add",
       data:{
          'name':data.name,
         'ville':data.ville,
@@ -727,12 +727,15 @@ khjhjhjhjh</div> */}
 
       <div className="flex flex-col mb-2 ">
       <h1 htmlFor="Où habite votre enfant " className=""> Où habite votre enfant </h1>
-         <input type="text" 
+      <select 
          className="p-2 border boder-slate-400 mt-1 outline-0
-         rounded-md" placeholder="Cradat yaounde " 
-         {...register("street",{
+         rounded-md" placeholder=" yaounde " 
+         {...register("ville",{
             required:true})}
-         />
+         >
+            <option>yaounde</option>
+            <option>Douala</option>
+         </select>
          {errors.street && <p className="text-red-300">empty field </p> }
       </div>
       <div>
@@ -852,17 +855,15 @@ formNo2 === 2 && <div>
       <label htmlFor="what is your number phone" className=""> Numero de telephone</label>
       
      {/* prefice un champ */}
-      <input type="text" placeholder="691722067"  className="p-2 border boder-slate-400 mt-1 outline-0
-      rounded-md"  
-        {...register("number", {
-         required: true,
-         maxLength:9 ,
-         pattern:/^6[0-9]/ ,
-         minLength:9
-       
-       })}
-        
-        />
+     <select 
+         className="p-2 border boder-slate-400 mt-1 outline-0
+         rounded-md" placeholder=" yaounde " 
+         {...register("ville",{
+            required:true})}
+         >
+            <option>yaounde</option>
+            <option>Douala</option>
+         </select>
          {errors.number && errors.number.type ==="maxLength" ?(
             //  {veryf},
            <p className="text-red-300"> overflow number</p>):
